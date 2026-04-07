@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compressor de Imagens</title>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Compressor de Imagem</h1>
+            <p class="subtitle">Otimização em massa limitada a 1MB</p>
+        </div>
+
+        <div class="drop-zone" id="dropZone">
+            SOLTE SEUS ARQUIVOS OU PASTAS AQUI
+        </div>
+
+        <input type="file" id="fileInput" multiple hidden accept="image/jpeg,image/jpg">
+        <input type="file" id="folderInput" webkitdirectory directory hidden>
+        
+        <div class="actions">
+            <button class="btn-select" onclick="document.getElementById('fileInput').click()">Arquivos</button>
+            <button class="btn-select" onclick="document.getElementById('folderInput').click()">Pastas</button>
+            <button id="btnStart" class="btn-start" onclick="startProcessing()" disabled>Iniciar Processamento</button>
+            <button id="btnStop" class="btn-stop" onclick="stopProcessing()">Parar</button>
+        </div>
+
+        <div id="summary">FILA DE ESPERA: 0 ARQUIVOS</div>
+
+        <div class="file-list-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Original</th>
+                        <th>Resultado</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="fileTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

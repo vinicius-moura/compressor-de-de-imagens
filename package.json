@@ -1,0 +1,12 @@
+{
+  "name": "compressor-radha",
+  "version": "1.0.0",
+  "description": "Compressor de imagens em massa",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1",
+    "open": "^8.4.2",
+    "sharp": "^0.33.3"
+  }
+}
